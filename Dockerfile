@@ -8,7 +8,8 @@ RUN mvn clean install
 FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/my-app-1.0-SNAPSHOT.jar /app
-ENTRYPOINT ["sh", "-c"]
+#ENTRYPOINT ["sh", "-c"]
+ENTRYPOINT [ "java", "-jar", "/app" ]
 CMD ["java -jar my-app-1.0-SNAPSHOT.jar"]
 
 
