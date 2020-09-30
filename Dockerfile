@@ -9,7 +9,7 @@ FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/my-app-1.0-SNAPSHOT.jar /app
 #ENTRYPOINT ["sh", "-c"]
-ENTRYPOINT [ "java", "-jar", "/app" ]
+ENTRYPOINT [ "java", "-jar", "/app/my-app-1.0-SNAPSHOT.jar" ]
 CMD ["java -jar my-app-1.0-SNAPSHOT.jar"]
 
 
